@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #080812;
+  color: #f4f4ff;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Futuristic Vice City Horizon Grid */
+.vice-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 60, 172, 0.1) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, #000 35%, transparent 100%);
+}
+
+/* Subtle CRT / HUD scanlines */
+.vice-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0px,
+    rgba(255, 255, 255, 0) 3px,
+    rgba(0, 229, 255, 0.018) 4px
+  );
+  pointer-events: none;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(19, 17, 44, 0.78) 0%,
+    rgba(10, 10, 24, 0.88) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-neon {
+  position: relative;
+  background: linear-gradient(
+    150deg,
+    rgba(21, 18, 51, 0.82) 0%,
+    rgba(8, 8, 18, 0.92) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.24);
+  box-shadow:
+    0 0 36px rgba(138, 43, 226, 0.22),
+    0 24px 64px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.neon-text-gradient {
+  background: linear-gradient(95deg, #FF3CAC 0%, #8A2BE2 45%, #00E5FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neon-text-sunset {
+  background: linear-gradient(95deg, #FF8C42 0%, #FF3CAC 52%, #8A2BE2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-neon-primary {
+  background: linear-gradient(100deg, #FF3CAC 0%, #8A2BE2 52%, #00E5FF 100%);
+  background-size: 180% 180%;
+  transition: background-position 0.35s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow:
+    0 0 22px rgba(255, 60, 172, 0.42),
+    0 0 38px rgba(0, 229, 255, 0.22);
+}
+
+.btn-neon-primary:hover:not(:disabled) {
+  background-position: 100% 50%;
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 30px rgba(255, 60, 172, 0.65),
+    0 0 55px rgba(0, 229, 255, 0.38);
+}
+
+.btn-neon-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-neon-secondary {
+  background: rgba(13, 14, 33, 0.72);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.14);
+  transition: all 0.25s ease;
+}
+
+.btn-neon-secondary:hover:not(:disabled) {
+  border-color: #00E5FF;
+  background: rgba(0, 229, 255, 0.12);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080812;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF3CAC, #8A2BE2);
+  border-radius: 999px;
+}
